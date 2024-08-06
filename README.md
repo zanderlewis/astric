@@ -34,7 +34,7 @@ Hyperialum introduces a simple and powerful syntax to enhance your CSS workflow.
 
 ### Variables
 Define reusable values using the `$` symbol.
-```hy
+```hyperialum
 $primary-color: #3498db;
 $spacing: 16px;
 
@@ -45,7 +45,7 @@ body
 
 ### Loops
 Generate repetitive CSS with ease using `--for` and `--endfor`.
-```hy
+```hyperialum
 --for $i from 1 to 3
     .item-$i
         width: calc(100% / $i)
