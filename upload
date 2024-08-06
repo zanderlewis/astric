@@ -18,7 +18,7 @@ def upload(version_increment):
         subprocess.run(["rm", "-rf", "dist"], check=True)
 
     # Increment the version
-    with open("version.txt", "r") as file:
+    with open("version", "r") as file:
         version = file.read().strip()
     
     major, minor, patch = map(int, version.split('.'))
