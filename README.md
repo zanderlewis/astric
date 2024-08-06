@@ -88,9 +88,9 @@ To use Hyperialum, follow these steps:
     ```
 
 3. **Run Hyperialum**:
-    Use the `hyperialum.py` script to process your `.hym` file and generate the corresponding CSS file:
+    Use the `hyperialum` command to process your `.hym` file and generate the corresponding CSS file:
     ```sh
-    python3 hyperialum.py example.hy output.css
+    hyperialum example.hym output.css
     ```
 
 4. **Check the output**:
