@@ -1,5 +1,6 @@
 import re
 import argparse
+from . import loop, parse
 
 
 class Hyperialum:
@@ -19,28 +20,7 @@ class Hyperialum:
                 self.output = [compacted_output]
 
     def parse(self, input_file):
-        print(f"Reading input file: {input_file}")
-        with open(input_file) as f:
-            code = f.read()
-        lines = code.splitlines()
-        i = 0
-        while i < len(lines):
-            stripped_line = self._handle_comments(lines[i])
-            if not stripped_line:
-                i += 1
-                continue
-            if stripped_line.startswith("$"):
-                self._handle_variable(stripped_line)
-            elif stripped_line.startswith("--for"):
-                i = self._handle_for_loop(lines, i)
-            elif ":" in stripped_line:
-                self._handle_property(stripped_line)
-            else:
-                self._handle_selector(stripped_line)
-            i += 1
-        if self.is_selector_open:
-            self.output.append("}")
-        return "\n".join(self.output)
+        parse.parse(self, input_file)
 
     def _handle_variable(self, line):
         name, value = line.split(":", 1)
@@ -64,33 +44,7 @@ class Hyperialum:
         self.output.append(f"    {property_name}: {value};")
 
     def _handle_for_loop(self, lines, i):
-        loop_line = lines[i].strip()
-        match = re.match(
-            "--for\\s+\\$(\\w+)\\s+from\\s+(\\d+)\\s+to\\s+(\\d+)", loop_line
-        )
-        if match:
-            var_name = match.group(1)
-            start = int(match.group(2))
-            end = int(match.group(3))
-            loop_body = []
-            i += 1
-            while i < len(lines) and (not lines[i].strip().startswith("--endfor")):
-                loop_body.append(lines[i].strip())
-                i += 1
-            for j in range(start, end + 1):
-                for line in loop_body:
-                    replaced_line = line.replace(f"${var_name}", str(j))
-                    if ":" in replaced_line:
-                        self._handle_property(replaced_line)
-                    else:
-                        if self.is_selector_open:
-                            self.output.append("}")
-                            self.is_selector_open = False
-                        self._handle_selector(replaced_line)
-            if self.is_selector_open:
-                self.output.append("}")
-                self.is_selector_open = False
-        return i
+        loop.loop(self, lines, i)
 
     def _handle_comments(self, line):
         comments = ["//", ">>"]
@@ -107,10 +61,8 @@ class Hyperialum:
 
     def write_file(self):
         self._handle_parameters()
-        print(f"Writing output file: {self.file}")
         with open(self.file, "w") as f:
             f.write("\n".join(self.output))
-        print(f"Output written to {self.file}")
 
 
 def main():

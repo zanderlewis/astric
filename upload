@@ -5,6 +5,7 @@ import argparse
 import time
 import os
 
+
 def upload(version_increment):
     # Cleanup python files
     subprocess.run(["python3", "cleanup.py"], check=True)
