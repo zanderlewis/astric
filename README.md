@@ -34,7 +34,7 @@ Hyperialum introduces a simple and powerful syntax to enhance your CSS workflow.
 
 ### Variables
 Define reusable values using the `$` symbol.
-```hy
+```hyperialum
 $primary-color: #3498db;
 $spacing: 16px;
 
@@ -45,7 +45,7 @@ body
 
 ### Loops
 Generate repetitive CSS with ease using `--for` and `--endfor`.
-```hy
+```hyperialum
 --for $i from 1 to 3
     .item-$i
         width: calc(100% / $i)
@@ -88,9 +88,9 @@ To use Hyperialum, follow these steps:
     ```
 
 3. **Run Hyperialum**:
-    Use the `hyperialum.py` script to process your `.hym` file and generate the corresponding CSS file:
+    Use the `hyperialum` command to process your `.hym` file and generate the corresponding CSS file:
     ```sh
-    python3 hyperialum.py example.hy output.css
+    hyperialum example.hym output.css
     ```
 
 4. **Check the output**:
