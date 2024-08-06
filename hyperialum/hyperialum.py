@@ -123,16 +123,18 @@ def main():
     if not args.input_file:
         ap.print_help()
         return
-    if not args.input_file.endswith(".hy"):
-        print("Input file should be a .hy file")
+    if not args.input_file.endswith(".hym"):
+        print("Input file should be a .hym file")
         return
     output_file = (
-        args.output_file if args.output_file else args.input_file.replace(".hy", ".css")
+        args.output_file
+        if args.output_file
+        else args.input_file.replace(".hym", ".css")
     )
     if args.compact:
         parameters.append("compact")
-    hy = Hyperialum(output_file, args.input_file, parameters)
-    hy.write_file()
+    hym = Hyperialum(output_file, args.input_file, parameters)
+    hym.write_file()
 
 
 if __name__ == "__main__":

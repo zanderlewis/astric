@@ -54,7 +54,7 @@ Generate repetitive CSS with ease using `--for` and `--endfor`.
 
 ### Comments
 Add comments to your Hyperialum files. Comments will be stripped out in the generated CSS.
-```hy
+```hyperialum
 // Singleline comment
 >> Another singleline comment
 ```
@@ -71,9 +71,9 @@ To use Hyperialum, follow these steps:
     pip3 install hyperialum
     ```
 
-2. **Prepare your `.hy` file**:
-    Create a `.hy` file with your Hyperialum syntax. For example, create a file named `example.hy`:
-    ```hy
+2. **Prepare your `.hym` file**:
+    Create a `.hym` file with your Hyperialum syntax. For example, create a file named `example.hym`:
+    ```hyperialum
     $primary-color: #3498db
     $spacing: 16px
 
@@ -88,7 +88,7 @@ To use Hyperialum, follow these steps:
     ```
 
 3. **Run Hyperialum**:
-    Use the `hyperialum.py` script to process your `.hy` file and generate the corresponding CSS file:
+    Use the `hyperialum.py` script to process your `.hym` file and generate the corresponding CSS file:
     ```sh
     python3 hyperialum.py example.hy output.css
     ```

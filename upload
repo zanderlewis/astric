@@ -33,7 +33,7 @@ def upload(version_increment):
         patch += 1
     new_version = f"{major}.{minor}.{patch}"
     
-    with open("version.txt", "w") as file:
+    with open("version", "w") as file:
         file.write(new_version)
 
     time.sleep(1)
