@@ -1,2 +1,2 @@
 from . import loop, parse
-from .hyperialum import *
+from .astric import *

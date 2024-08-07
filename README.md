@@ -1,40 +1,40 @@
-# Hyperialum
-(hy-peer-ree-al-uhm) Next generation CSS.
+# Astric
+Next generation CSS.
 
 ```
-██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗ ██╗ █████╗ ██╗     ██╗   ██╗███╗   ███╗
-██║  ██║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██║██╔══██╗██║     ██║   ██║████╗ ████║
-███████║ ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║███████║██║     ██║   ██║██╔████╔██║
-██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══╝  ██╔══██╗██║██╔══██║██║     ██║   ██║██║╚██╔╝██║
-██║  ██║   ██║   ██║     ███████╗██║  ██║██║██║  ██║███████╗╚██████╔╝██║ ╚═╝ ██║
-╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝
+ █████╗ ███████╗████████╗██████╗ ██╗ ██████╗
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝
+███████║███████╗   ██║   ██████╔╝██║██║     
+██╔══██║╚════██║   ██║   ██╔══██╗██║██║     
+██║  ██║███████║   ██║   ██║  ██║██║╚██████╗
+╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝
 ```
 
 ## Table of Contents
-- [Hyperialum](#hyperialum)
+- [Astric](#astric)
   - [Features](#features)
   - [Syntax](#syntax)
   - [Usage](#usage)
 
 ## Features
 
-Hyperialum is a lightweight CSS preprocessor that simplifies the way you write CSS. It offers the following features:
+Astric is a lightweight CSS preprocessor that simplifies the way you write CSS. It offers the following features:
 
 - **Python-like Syntax:** Write CSS using a Python-like syntax.
 - **Simplicity:** Write clean, maintainable, and scalable CSS.
 - **Optionals:** Semicolons are optional. If you want to use them, you can (and is required for single-line properties).
 - **Variables:** Define reusable values using the `$` symbol.
 - **Loops:** Generate repetitive CSS with ease using `--for` and `--endfor`.
-- **Comments:** Add comments to your Hyperialum files.
+- **Comments:** Add comments to your Astric files.
 - **Compact Output:** Use the `--compact` flag to compact outputted CSS onto one line.
 
 ## Syntax
 
-Hyperialum introduces a simple and powerful syntax to enhance your CSS workflow. Here are some key features:
+Astric introduces a simple and powerful syntax to enhance your CSS workflow. Here are some key features:
 
 ### Variables
 Define reusable values using the `$` symbol.
-```hyperialum
+```Astric
 $primary-color: #3498db;
 $spacing: 16px;
 
@@ -45,7 +45,7 @@ body
 
 ### Loops
 Generate repetitive CSS with ease using `--for` and `--endfor`.
-```hyperialum
+```Astric
 --for $i from 1 to 3
     .item-$i
         width: calc(100% / $i)
@@ -53,27 +53,27 @@ Generate repetitive CSS with ease using `--for` and `--endfor`.
 ```
 
 ### Comments
-Add comments to your Hyperialum files. Comments will be stripped out in the generated CSS.
-```hyperialum
+Add comments to your Astric files. Comments will be stripped out in the generated CSS.
+```Astric
 // Singleline comment
 >> Another singleline comment
 ```
 
-These features make Hyperialum a powerful tool for writing clean, maintainable, and scalable CSS.
+These features make Astric a powerful tool for writing clean, maintainable, and scalable CSS.
 
 
 ## Usage
 
-To use Hyperialum, follow these steps:
+To use Astric, follow these steps:
 
 1. **Download the library**:
     ```sh
-    pip3 install hyperialum
+    pip3 install Astric
     ```
 
-2. **Prepare your `.hym` file**:
-    Create a `.hym` file with your Hyperialum syntax. For example, create a file named `example.hym`:
-    ```hyperialum
+2. **Prepare your `.astr` file**:
+    Create a `.astr` file with your Astric syntax. For example, create a file named `example.astr`:
+    ```Astric
     $primary-color: #3498db
     $spacing: 16px
 
@@ -87,10 +87,10 @@ To use Hyperialum, follow these steps:
     --endfor
     ```
 
-3. **Run Hyperialum**:
-    Use the `hyperialum` command to process your `.hym` file and generate the corresponding CSS file:
+3. **Run Astric**:
+    Use the `Astric` command to process your `.astr` file and generate the corresponding CSS file:
     ```sh
-    hyperialum example.hym output.css
+    Astric example.astr output.css
     ```
 
 4. **Check the output**:

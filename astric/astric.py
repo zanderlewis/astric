@@ -3,7 +3,7 @@ import argparse
 from . import loop, parse
 
 
-class Hyperialum:
+class Astric:
 
     def __init__(self, file, input_file, parameters=[]):
         self.variables = {}
@@ -75,18 +75,18 @@ def main():
     if not args.input_file:
         ap.print_help()
         return
-    if not args.input_file.endswith(".hym"):
-        print("Input file should be a .hym file")
+    if not args.input_file.endswith(".astr"):
+        print("Input file should be a .astr file")
         return
     output_file = (
         args.output_file
         if args.output_file
-        else args.input_file.replace(".hym", ".css")
+        else args.input_file.replace(".astr", ".css")
     )
     if args.compact:
         parameters.append("compact")
-    hym = Hyperialum(output_file, args.input_file, parameters)
-    hym.write_file()
+    astr = Astric(output_file, args.input_file, parameters)
+    astr.write_file()
 
 
 if __name__ == "__main__":
